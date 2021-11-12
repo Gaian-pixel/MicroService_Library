@@ -15,7 +15,6 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 @Configuration
 @EnableSwagger2
-
 public class SwaggerConfig extends WebMvcConfigurationSupport {
 
     @Bean
@@ -25,6 +24,7 @@ public class SwaggerConfig extends WebMvcConfigurationSupport {
                 .apis(RequestHandlerSelectors().any())
                 .paths(PathSelectors.any())
                 .build();
+
     }
 
     private ApiInfo apiEndPointsInfo() {
