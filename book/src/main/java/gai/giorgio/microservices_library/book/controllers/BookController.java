@@ -29,7 +29,7 @@ public class BookController {
 
     // CREATE
     @RequestMapping(method = RequestMethod.POST)
-    public Book addNewCustomer(@Valid @RequestBody Book book) {
+    public Book addNewBook(@Valid @RequestBody Book book) {
         return bookRepository.save(book);
     }
 
@@ -54,7 +54,7 @@ public class BookController {
 
     // UPDATE
     @RequestMapping(value = "/{bookId}", method = RequestMethod.PUT)
-    public Book modifyCustomer(@RequestBody Book book, @RequestBody String bookId ) {
+    public Book modifyBook(@RequestBody Book book, @RequestBody String bookId ) {
         return bookRepository.save(book);
     }
 
@@ -66,7 +66,7 @@ public class BookController {
     }
 
     @RequestMapping(value = "/{bookId}", method = RequestMethod.DELETE)
-    public void deleteBook(@PathVariable String customerId) {
-        bookRepository.deleteById(customerId);
+    public void deleteBook(@PathVariable String bookId) {
+        bookRepository.deleteById(bookId);
     }
 }
