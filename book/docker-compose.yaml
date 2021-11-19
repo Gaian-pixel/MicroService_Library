@@ -1,6 +1,17 @@
 version: "3.7"
 services:
 
+  books-ms:
+    build:
+      context: .
+      args:
+        MVN_ARGS: -DskipTests=true
+    container_name: book-ms
+    ports:
+      - "8102:8102"
+    depends_on:
+      - mongodb_db
+
   mongodb_db:
     image: mongo:latest
     container_name: book-mongodb
