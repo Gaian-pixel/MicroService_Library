@@ -1,5 +1,5 @@
 CREATE DATABASE "customer" OWNER mariadb;
-\connect order
+\connect customer
 ALTER DATABASE "customer" SET TIMEZONE TO 'Europe/Rome';
 SET TIMEZONE TO 'Europe/Rome';
 
