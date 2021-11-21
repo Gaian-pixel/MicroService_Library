@@ -1,0 +1,32 @@
+version: "3.7"
+services:
+
+  customer-ms:
+    build:
+      context: .
+      args:
+        MVN_ARGS: -DskipTests=true
+    container_name: customer-ms
+    ports:
+      - "8103:8103"
+    depends_on:
+      - mariadb_db
+
+  mariadb_db:
+    image: mariadb:latest
+    container_name: customer-mariadb
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: customer
+      MYSQL_USER: root
+      MYSQL_PASSWORD: root
+    ports:
+      - "8888:8888"
+    volumes:
+      - ${PWD}/mariadb:/var/lib/mysql
+      - ./order/dbinit.sql:/docker-entrypoint-initdb.d/schema.sql:ro
+    restart: always
+
+
+volumes:
+  mariadb_data: {}
