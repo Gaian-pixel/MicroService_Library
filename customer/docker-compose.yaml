@@ -19,7 +19,7 @@ services:
       - "8888:8888"
     volumes:
       - mariadb_data:/var/lib/mysql
-      - ./order/dbinit.sql:/docker-entrypoint-initdb.d/schema.sql:ro
+      - ./customer/dbinit.sql:/docker-entrypoint-initdb.d/schema.sql:ro
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: root
