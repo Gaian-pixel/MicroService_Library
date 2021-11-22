@@ -1,0 +1,18 @@
+MIcroService_Library note
+
+1) The swagger: 
+Swagger is a set of rules (in other words, a specification) for a format describing REST APIs. The format is both machine-readable and human-readable. 
+As a result, it can be used to share documentation among product managers, testers and developers, but can also be used by various tools to automate API-related processes.
+Swagger aims to cover the more common design patterns while being simpler to write and use.
+
+
+What is a docket object?
+A builder which is intended to be the primary interface into the swagger-springmvc framework. Provides sensible defaults and convenience methods for configuration.
+
+Book db structure:
+
+CREATE TABLE book (bookId VARCHAR(10) NOT NULL PRIMARY KEY, title VARCHAR(50) NOT NULL,
+       author VARCHAR(50) NOT NULL, publisher VARCHAR(50), pageNumber int);
+       
+       INSERT INTO book(bookId, title, author, publisher, pageNumber) VALUES('0000000000','Gio Adventure','Gai Giorgio','Mondadori',234);
+
