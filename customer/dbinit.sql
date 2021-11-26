@@ -1,16 +1,9 @@
-CREATE DATABASE "customer" OWNER mariadb;
-\connect customer
-ALTER DATABASE "customer" SET TIMEZONE TO 'Europe/Rome';
-SET TIMEZONE TO 'Europe/Rome';
-
-CREATE TABLE "customers"
-(
-    customer_id character varying,
-    name character varying,
-    surname character varying,
-    address character varying,
-    telNum character varying
-) TABLESPACE pg_default;
-
-ALTER TABLE "customers"
-    OWNER to mariadb;
+create database customer;
+use customer;
+create table customers(customerId varchar(20) not null,
+name varchar(10) not null,
+surname varchar(10) not null,
+address varchar(20),
+telNum varchar(10),
+primary key(customerId)
+);
