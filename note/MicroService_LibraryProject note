@@ -15,4 +15,18 @@ CREATE TABLE book (bookId VARCHAR(10) NOT NULL PRIMARY KEY, title VARCHAR(50) NO
        author VARCHAR(50) NOT NULL, publisher VARCHAR(50), pageNumber int);
        
        INSERT INTO book(bookId, title, author, publisher, pageNumber) VALUES('0000000000','Gio Adventure','Gai Giorgio','Mondadori',234);
+       
+
+VOLUME MOUNTIG BUG:
+
+The volume mount won't be executed becouse the mount directory alrady exits (i don't know why {no error wil be lunched})
+if i delete the already existing db service (sudo docker volume rm customer_postgres_data), it will'finally start the mount and consequently
+start the entrypoint script.
+However the latter will fail beacouse i have previusly runned the lab-2 docker compose and it will try to execute the postgres order database schema.sql
+
+/usr/local/bin/docker-entrypoint.sh: running /docker-entrypoint-initdb.d/schema.sql
+customer-postgres | CREATE DATABASE
+customer-postgres | 2021-11-26 22:40:24.671 UTC [61] FATAL:  database "order" does not exist
+
+
 
