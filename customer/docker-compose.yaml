@@ -1,0 +1,31 @@
+version: "3.7"
+services:
+
+  customer-ms:
+    build:
+      context: .
+      args:
+        MVN_ARGS: -DskipTests=true
+    container_name: customer-ms
+    ports:
+      - "8103:8103"
+    depends_on:
+      - postgres_db
+
+  postgres_db:
+    image: postgres:latest
+    container_name: customer-postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./dbinit1.sql:/docker-entrypoint-initdb.d/schema.sql:ro
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: postgres
+
+
+volumes:
+  postgres_data: {}
