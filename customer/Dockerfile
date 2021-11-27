@@ -8,5 +8,5 @@ RUN echo "127.0.0.1 customer-mariadb" >> /etc/hosts && mvn --batch-mode package 
 FROM openjdk:8-jdk-alpine
 WORKDIR /app
 COPY --from=builder /app/target/*.jar app.jar
-EXPOSE 8102
+EXPOSE 8103
 ENTRYPOINT ["java","-jar","app.jar"]
