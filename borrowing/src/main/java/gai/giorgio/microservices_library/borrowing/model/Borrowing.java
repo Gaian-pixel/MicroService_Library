@@ -12,7 +12,7 @@ public class Borrowing {
     @Id
     private String borrowingId;
     @NotBlank(message = "bookId is mandatory")
-    private String bookId[];
+    private String bookId;
     @NotBlank(message = "customerId is mandatory")
     private String customerId;
     @NotBlank(message = "borrowingDate is mandatory")
