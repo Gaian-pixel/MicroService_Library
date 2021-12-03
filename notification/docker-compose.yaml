@@ -1,11 +1,13 @@
-notification-ms:
-  build:
-    context: ./notification
-  container_name: notification-ms
-  ports:
-    - "8104:8104"
-  depends_on:
-    - kafka
+version: "3.7"
+services:
+  notification-ms:
+    build:
+      context: .
+    container_name: notification-ms
+    ports:
+      - "8105:8105"
+    depends_on:
+      - kafka
 
   zookeeper:
     image: zookeeper

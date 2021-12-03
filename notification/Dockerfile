@@ -8,5 +8,5 @@ RUN echo "127.0.0.1 notification-kafka" >> /etc/hosts && mvn --batch-mode packag
 FROM openjdk:8-jdk-alpine
 WORKDIR /app
 COPY --from=builder /app/target/*.jar app.jar
-EXPOSE 8102
+EXPOSE 8105
 ENTRYPOINT ["java","-jar","app.jar"]
