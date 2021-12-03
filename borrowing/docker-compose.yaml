@@ -1,0 +1,29 @@
+version: "3.7"
+services:
+
+  borrowing-ms:
+    build:
+      context: .
+      args:
+        MVN_ARGS: -DskipTests=true
+    container_name: borrowing-ms
+    ports:
+      - "8104:8104"
+    depends_on:
+      - mongodb_db
+
+  mongodb_db:
+    image: mongo:latest
+    container_name: borrowing-mongodb
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: root
+      MONGO_INITDB_DATABASE: borrowing_db
+    ports:
+      - 27017:27017
+    volumes:
+      - mongodb_data:/data/db
+
+
+volumes:
+  mongodb_data: {}
