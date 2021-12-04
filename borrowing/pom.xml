@@ -128,19 +128,6 @@
             <artifactId>spring-boot-starter-validation</artifactId>
         </dependency>
 
-        <!-- https://mvnrepository.com/artifact/org.apache.camel/camel-spring-boot-starter -->
-        <dependency>
-            <groupId>org.apache.camel</groupId>
-            <artifactId>camel-spring-boot-starter</artifactId>
-            <version>2.25.2</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.apache.camel</groupId>
-            <artifactId>camel-kafka</artifactId>
-            <version>2.25.2</version>
-        </dependency>
-
         <!-- Spring for Kafka -->
         <dependency>
             <groupId>org.springframework.kafka</groupId>
