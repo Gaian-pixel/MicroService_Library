@@ -1,8 +1,0 @@
-
-BorrowingRepository{
-    borrowingRepository: BorrowingRepository!
-}
-
-type GraphQlQuery {
-    allBorrowing(borrowing: Borrowing!): BorrowingRepository!
-}
