@@ -16,7 +16,6 @@ import java.util.List;
 import java.util.Optional;
 
 @Slf4j
-@RequestMapping(value = "/v2/borrowing/graphql")
 @Component
 public class GraphQlQuery implements GraphQLQueryResolver {
     public BorrowingRepository allBorrowing(Borrowing borrowing) {
