@@ -1,8 +1,12 @@
 
-type borrowingRepository{
-    borrowingRepository: BorrowingRepository!
+type Borrowing{
+    borrowingId: String!
+    bookId: String!
+    customerId: String!
+    borrowingDate: String!
+    borrowingExpDate: String!
 }
 
 type GraphQlQuery {
-    allBorrowing(borrowing: Borrowing!): BorrowingRepository!
+    allBorrowing(borrowingId: String!): Borrowing!
 }
