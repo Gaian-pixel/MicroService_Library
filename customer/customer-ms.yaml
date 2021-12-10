@@ -1,0 +1,77 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: customer-deployment
+  labels:
+    app: customer
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: customer
+  template:
+    metadata:
+      labels:
+        app: customer
+    spec:
+      containers:
+        - name: customer-ms
+          image: gaianpixel/customer:1.0-SNAPSHOT
+          ports:
+          - containerPort: 8102
+          volumeMounts:
+          - mountPath: /app/config
+            readOnly: true
+            name: customer-conf
+      volumes:
+      - name: customer-conf
+        configMap:
+          name: customer-conf
+          items:
+            - key: application.properties
+              path: application.properties
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: customer-service
+  labels:
+    app: customer
+spec:
+  type: NodePort
+  ports:
+    - name: http
+      nodePort: 32103
+      port: 8102
+      targetPort: 8102
+  selector:
+    app: customer
+---
+apiVersion: v1
+kind: ConfigMap
+data:
+  application.properties: |-
+    # Local Postgres config
+    spring.jpa.hibernate.ddl-auto=none
+    spring.datasource.initialization-mode=always
+    spring.datasource.platform=postgres
+    spring.datasource.url=jdbc:postgresql://customer-postgres:5432/customer
+    spring.datasource.username=postgres
+    spring.datasource.password=postgres
+    spring.jpa.properties.hibernate.jdbc.lob.non_contextual_creation=true
+
+    # App config
+    server.port=8102
+    spring.application.name=CustomerMicroservice
+    server.servlet.context-path=/customers-service
+
+    # Log config
+    logging.level.org.springframework.web.servlet.DispatcherServlet=TRACE
+
+    # Management config
+    management.endpoint.info.enabled=true
+    management.security.enabled=false
+metadata:
+  name: customer-conf
+  namespace: default
