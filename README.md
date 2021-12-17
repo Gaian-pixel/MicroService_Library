@@ -1,6 +1,6 @@
 # MicroService_Library
-My very own version of the assigment.
+A microservices application based on REST and GraphQl runned on k8s
 
 TO DO
 
-- Resolve graphql issue on borrowing microservice
+-add github pipeline 
