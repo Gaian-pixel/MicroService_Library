@@ -1,8 +1,20 @@
 
-type borrowingRepository{
-    borrowingRepository: BorrowingRepository!
+type Borrowing{
+    borrowingId: String!
+    bookId: String!
+    customerId: String!
+    borrowingDate: String!
+    borrowingExpDate: String!
 }
 
-type GraphQlQuery {
-    allBorrowing(borrowing: Borrowing!): BorrowingRepository!
+
+type Query {
+    borrowings(count: Int):[Borrowing]
+    borrowing(borrowingId: String):Borrowing
 }
+
+type Mutation {
+	addBorrowing(borrowingId: String!, bookId: String!, customerId: String!, borrowingDate: String!, borrowingExpDate: String!):Borrowing
+}
+
+

@@ -7,6 +7,14 @@ type Borrowing{
     borrowingExpDate: String!
 }
 
-type GraphQlQuery {
-    allBorrowing(borrowingId: String!): Borrowing!
+
+type Query {
+    borrowings(count: Int):[Borrowing]
+    borrowing(borrowingId: String):Borrowing
 }
+
+type Mutation {
+	addBorrowing(borrowingId: String!, bookId: String!, customerId: String!, borrowingDate: String!, borrowingExpDate: String!):Borrowing
+}
+
+
