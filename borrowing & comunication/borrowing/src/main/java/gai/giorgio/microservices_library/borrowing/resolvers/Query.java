@@ -19,11 +19,11 @@ public class Query implements GraphQLQueryResolver {
     @Autowired
     private BorrowingService borrowingService;
 
-    public List<Borrowing> getAllBorrowing(final int count) {
+    public List<Borrowing> getBorrowings(final int count) {
         return this.borrowingService.getAllBorrowings(count);
     }
 
-    public Optional<Borrowing> getVehicle(final String borrowingId) {
+    public Optional<Borrowing> getBorrowing(final String borrowingId) {
         return this.borrowingService.getBorrowingById(borrowingId);
     }
 
