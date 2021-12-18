@@ -17,7 +17,7 @@ jobs:
     - uses: actions/checkout@v2
     - name: Add hosts to /etc/hosts
       run: |
-        sudo echo "127.0.0.1 book-mongodb" | sudo tee -a /etc/hosts && mvn --batch-mode package -DskipTests=true
+        sudo echo "127.0.0.1 bookoo-mongodb" | sudo tee -a /etc/hosts && mvn --batch-mode package -DskipTests=true
     - name: Get branch
       id: get_branch
       run: echo ::set-output name=BRANCH::$(echo $GITHUB_REF | cut -d / -f 3)
