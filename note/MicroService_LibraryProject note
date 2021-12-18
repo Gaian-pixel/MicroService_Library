@@ -33,5 +33,7 @@ customer-postgres | 2021-11-26 22:40:24.671 UTC [61] FATAL:  database "order" do
 Exact same issue
 https://github.com/MariaDB/mariadb-docker/issues/160
 
+Open Kibana runned on k8s
+kubectl port-forward service/kibana 5601:5601
 
 
