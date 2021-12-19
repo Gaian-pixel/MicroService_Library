@@ -7,6 +7,4 @@ Instruction to set up the enviroment
 2) Execute the init services script. It will start the services on k8s
 
 
-TO DO
 
--add github pipeline 
