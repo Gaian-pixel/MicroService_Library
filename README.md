@@ -1,6 +1,5 @@
 # MicroService_Library
-This project is an ITS-ICT Microservices course assignment.
-It aims to implement the microservices pattern applied to a library management system. Executed on Kubernetes, every microservices is containerized with docker and exposed through the REST or GraphQl paradigm.
+A library management system based on boot-spring, REST, GraphQl and runned on k8s
 
 Instruction to set up the enviroment 
 
