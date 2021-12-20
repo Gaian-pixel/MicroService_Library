@@ -1,9 +1,10 @@
 # MicroService_Library
 A library management system based on boot-spring, REST, GraphQl and runned on k8s
 
-Architecture:
+The complete architecture of the project:
 ![image](https://user-images.githubusercontent.com/78237734/146746287-fcaf26cd-1752-44d3-bf77-2bb9845aaafe.png)
 
+An hypothetical front end structure based on this application:
 
 Instruction to set up the enviroment 
 
