@@ -10,6 +10,8 @@ An hypothetical front end structure based on this application:
 
 Instruction to set up the enviroment 
 
+Start Minikube: minikube start
+
 1) Execute the init infrastructure script. It will install all the needed components on k8s
 2) Execute the init services script. It will start the services on k8s
 
