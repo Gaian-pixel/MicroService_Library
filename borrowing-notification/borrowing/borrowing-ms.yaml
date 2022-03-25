@@ -3,6 +3,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: borrowing-deployment
+  namespace: borrowing-notification
   labels:
     app: borrowing
 spec:
@@ -81,6 +82,7 @@ data:
     spring.kafka.producer.value-serializer=org.springframework.kafka.support.serializer.JsonSerializer
 metadata:
   name: borrowing-conf
-  namespace: default
+  namespace: borrowing-notification
+
   
   

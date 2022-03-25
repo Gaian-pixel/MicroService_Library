@@ -3,6 +3,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: notification-deployment
+  namespace: borrowing-notification
   labels:
     app: notification
 spec:
@@ -69,6 +70,6 @@ data:
     kafka.broker.urls=kafka:9092
 metadata:
   name: notification-conf
-  namespace: default
+  namespace: borrowing-notification
   
   

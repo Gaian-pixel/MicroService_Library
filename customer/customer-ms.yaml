@@ -3,6 +3,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: customer-deployment
+  namespace: customer
   labels:
     app: customer
 spec:
@@ -74,4 +75,4 @@ data:
     management.security.enabled=false
 metadata:
   name: customer-conf
-  namespace: default
+  namespace: customer

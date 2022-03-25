@@ -3,6 +3,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: book-deployment
+  namespace: book
   labels:
     app: book
 spec:
@@ -73,4 +74,4 @@ data:
     management.security.enabled=false
 metadata:
   name: book-conf
-  namespace: default
+  namespace: book
